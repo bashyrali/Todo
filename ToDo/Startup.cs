@@ -32,8 +32,8 @@ namespace ToDo
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<StoreContext>(options => options.UseNpgsql(connection));
-            services.AddScoped<IRepository<Project>,ProjectRepository>();
-            services.AddScoped<IRepository<Task>,TaskRepository>();
+            services.AddScoped<IRepositoryProject,ProjectRepository>();
+            services.AddScoped<IRepositoryTask,TaskRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "ToDo", Version = "v1"}); });

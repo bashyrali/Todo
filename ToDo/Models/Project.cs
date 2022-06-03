@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace ToDo.Models
 {
@@ -11,6 +12,7 @@ namespace ToDo.Models
         public DateTime CompleteDateTime { get; set; }
         public StatusProjectEnum Status { get; set; }
         public int Priority { get; set; }
+        [JsonIgnore]
         public List<Task> Tasks { get; set; }
     }
 }
